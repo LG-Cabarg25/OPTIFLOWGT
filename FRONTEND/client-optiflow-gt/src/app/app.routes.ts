@@ -2,11 +2,17 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('@reactive/reactive.routes').then(m => m.ReactiveRoutes)
+    path:'',
+    loadChildren: () =>
+      import('@public/public.routes').then((c) => c.PublicRoutes),
   },
   {
-    path:'register',
-    loadChildren: () => import('@auth/auth.routes').then(m => m.AuthRoutes)
+    path: '404',
+    loadComponent: () =>
+      import('@shared/pages').then((c) => c.NotFoundComponentComponent),
+  },
+  {
+    path:'**',
+    redirectTo: '404',
   }
 ];

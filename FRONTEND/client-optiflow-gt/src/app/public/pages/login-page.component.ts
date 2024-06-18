@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-switches-page',
+  selector: 'app-login-page',
   standalone: true,
   imports: [],
   template: `
     <p>
-      switches-page works!
+      login-page works!
     </p>
   `,
   styles: ``
 })
-export class SwitchesPageComponent {
+export class LoginPageComponent {
 
 }

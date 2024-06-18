@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-basig-page',
+  selector: 'app-not-found.component',
   standalone: true,
   imports: [],
   template: `
     <p>
-      basig-page works!
+      error no se que hacer
     </p>
   `,
   styles: ``
 })
-export class BasigPageComponent {
+export class NotFoundComponentComponent {
 
 }
