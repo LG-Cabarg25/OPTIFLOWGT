@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AboutSectionComponent } from './sections/about-section.component';
 
 export const PublicRoutes : Routes = [
   {
@@ -20,7 +21,7 @@ export const PublicRoutes : Routes = [
       {
         path:'logout',
         loadComponent: ()=> import('./pages').then((m)=>m.LogoutPageComponent)
-      }
+      },
     ]
   }
 ]

@@ -1,26 +1,28 @@
-import { Component } from '@angular/core';
+import { NavbarComponent } from './../../shared/components/navbar-component';
+import { Component, signal } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { AboutSectionComponent, ContactSectionComponent, HeroSectionComponent, ServicesSectionComponent } from '@public/sections';
+
+interface menu {
+  label: string;
+  url: string;
+}
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet, RouterLink, NavbarComponent, AboutSectionComponent, ContactSectionComponent, HeroSectionComponent, ServicesSectionComponent],
   template: `
-   <h1 class="text-3xl font-bold underline text-center bg-primary text-secondary">
-  Hello world!
-</h1>
-<div class="card w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+    <div class="bg-gradient-to-r from-[#020831] to-[#0E216C]">
+      <navbar-component/>
+      <hero-section class="p-6"/>
+      <about-section/>
+      <services-section/>
+      <contact-section />
     </div>
-  </div>
-</div>
   `,
-  styles: ``
-})
-export class HomePageComponent {
+  styles: [
 
-}
+  ],
+})
+export class HomePageComponent {}
