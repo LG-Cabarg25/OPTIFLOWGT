@@ -51,10 +51,12 @@ import { Component } from '@angular/core';
     </section>
   `,
   styles: `
-   .text-gradient {
+  .text-gradient{
   background-image: linear-gradient(to right, #03B19D, #8EC74C);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #03B19D;`,
+  color: #03B19D;
+}
+  `,
 })
 export class AboutSectionComponent {}
