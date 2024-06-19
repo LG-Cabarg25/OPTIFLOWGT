@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <p>
-      login-page works!
+      PUTO LOGIN
     </p>
   `,
   styles: ``

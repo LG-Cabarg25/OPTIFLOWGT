@@ -5,6 +5,10 @@ interface Menu {
   label: string;
   url: string;
 }
+interface ButtonNav{
+  label: string;
+  routeb: string;
+}
 
 @Component({
   selector: 'navbar-component',
@@ -57,8 +61,9 @@ interface Menu {
         </ul>
       </div>
       <div class="navbar-end p-4">
+    @for (item of butonNavbarItems(); track item){
         <button class="btn btn-ghost text-white">
-          Iniciar Sesión
+        <a  [href]="item.routeb">{{ item.label }}</a>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-5 w-5"
@@ -85,7 +90,7 @@ interface Menu {
               fill-rule="evenodd"
             />
           </svg>
-        </button>
+        </button>}
       </div>
     </div>
   `,
@@ -128,6 +133,13 @@ export class NavbarComponent {
       url: '#contact',
     },
   ]);
+
+  public butonNavbarItems = signal<ButtonNav[]>([
+    {
+      label: 'Iniciar Sesión',
+      routeb: '/login',
+    },
+  ])
 
   public isFixed = true;
   public showWhiteBackground = signal<boolean>(false);

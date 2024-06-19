@@ -1,27 +1,36 @@
-import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Component, signal } from '@angular/core';
 
+interface HeroBut1{
+  label: string;
+  routeb: string;
+}
+interface HeroBut2{
+  label: string;
+  routeb: string;
+}
 @Component({
   selector: 'hero-section',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   template: `
-    <section id="hero" class="p-6 mt-4 lg:mt-32">
+    <section id="hero" class="lg:mt-24">
       <div
-        class="p-4 grid grid-cols-1 justify-center lg:justify-center lg:grid-cols-2 gap-4 sm:gap-20 animate-slide-in-left content-end"
+        class="p-10 grid grid-cols-1 justify-center lg:justify-center lg:grid-cols-2 gap-4 sm:gap-20 animate-slide-in-left content-end"
       >
-        <div class="order-1 lg:order-2">
+        <div class=" order-1 lg:order-2">
           <h4
-            class=" mt-10 text-1xl text-left font-bold sm:text-2xl lg:text-3xl mb-6 text-gradient"
+            class=" mt-2 text-1xl text-left font-bold sm:text-2xl lg:text-3xl mb-6 text-gradient"
           >
             Bienvenidos...
           </h4>
           <h1
-            class="mt-5 text-3xl text-left  sm:text-4xl lg:text-6xl mb-6 text-white"
+            class="mt-1 text-3xl text-left  sm:text-4xl lg:text-6xl mb-6 text-white"
           >
             OPTIFLOW-GT
           </h1>
           <h2
-            class="mt-5 text-3xl text-left font-bold sm:text-4xl lg:text-6xl mb-6 text-gradient "
+            class="mt-1 text-3xl text-left font-bold sm:text-4xl lg:text-6xl mb-6 text-gradient "
           >
             Tu solución automatizada.
           </h2>
@@ -31,11 +40,12 @@ import { Component } from '@angular/core';
               corporales de los atletas.
             </p>
           </article>
-          <div class="content-start p-8">
+          <div class="content-start p-2">
+          @for (item of heroItems1(); track item){
             <button
-              class="btn p-8 text-white content-center bg-gradient-to-r from-[#03B19D] to-[#8EC74C] rounded-full text-xl"
+              class="btn p-6 text-white content-center bg-gradient-to-r from-[#03B19D] to-[#8EC74C] rounded-full text-xl"
             >
-              Registrarse
+            <a [href]="item.routeb">{{ item.label }}</a>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
@@ -62,14 +72,15 @@ import { Component } from '@angular/core';
                   />
                 </g>
               </svg>
-            </button>
-            <button class="btn btn-active btn-link text-white p-8 text-xl">
-              Iniciar Sesión
-            </button>
+            </button>}
+            @for (item of heroItems2(); track item){
+            <button  class="btn btn-active btn-link text-white p-8 text-xl">
+            <a [href]="item.routeb">{{ item.label }}</a>
+            </button>}
           </div>
           <div class="chat chat-start">
             <div class="chat-image avatar">
-              <div class="w-16 rounded-full">
+              <div class="w-12 rounded-full">
                 <img
                   alt="Tailwind CSS chat bubble component"
                   src="/img/perfilg.jpg"
@@ -82,10 +93,10 @@ import { Component } from '@angular/core';
           </div>
         </div>
         <div
-          class="flex justify-center lg:justify-center rounded-full relative order-2 lg:order-2"
+          class="profile flex justify-center lg:justify-center mask mask-squircle  relative order-2 lg:order-2 bg-gradient-to-r from-[#0E216C] to-[#020831]"
         >
           <div
-            class="flex flex-col justify-start rounded-md shadow-md items-center self-center p-4 md:p-10 bg-gradient-to-r from-[#0E216C] to-[#020831]  rounded-xl"
+            class="profile flex flex-col justify-start shadow-secondary items-center self-center p-4 md:p-10  "
           >
             <img
               class="h-auto rounded-md shadow-md relative z-10"
@@ -94,34 +105,6 @@ import { Component } from '@angular/core';
               src="/img/profile.png"
               alt="optiflowgt"
               loading="lazy"
-            />
-          </div>
-          <div class="absolute top-0 left-9 mt-14 ml-4">
-            <img
-              class="w-20 h-20 rounded-full border-2 border-white shadow-md"
-              src="/img/icon1.png"
-              alt="Avatar 1"
-            />
-          </div>
-          <div class="absolute top-7 right-14 mt-8 mr-4">
-            <img
-              class="w-20 h-20 rounded-full border-2 border-white shadow-md"
-              src="/img/icon2.png"
-              alt="Avatar 2"
-            />
-          </div>
-          <div class="absolute bottom-8 left-10 mb-4 ml-4">
-            <img
-              class="w-20 h-20 rounded-full border-2 border-white shadow-md"
-              src="/img/icon3.png"
-              alt="Avatar 3"
-            />
-          </div>
-          <div class="absolute bottom-7 right-10 mb-4 mr-4">
-            <img
-              class="w-20 h-20 rounded-full border-2 border-white shadow-md"
-              src="/img/icon4.png"
-              alt="Avatar 4"
             />
           </div>
           <!-- <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
@@ -142,6 +125,23 @@ import { Component } from '@angular/core';
   -webkit-text-fill-color: transparent;
   color: #03B19D;
 }
+.profile {
+      filter: drop-shadow(
+        0 0 10px #8EC74C
+      )}
   `,
 })
-export class HeroSectionComponent {}
+export class HeroSectionComponent {
+  public heroItems1 = signal<HeroBut1[]>([
+    {
+      label: 'Registrarse',
+      routeb: '/register',
+    },
+  ])
+  public heroItems2 = signal<HeroBut2[]>([
+    {
+      label: 'Iniciar Sesión',
+      routeb: '/login',
+    },
+  ])
+}

@@ -35,7 +35,6 @@ import { Component } from '@angular/core';
             siempre cumpliendo con lo asignado.
           </p>
         </div>
-        <!-- Columna de la tarjeta -->
         <div class="flex justify-center lg:w-1/2">
           <div
             class="card w-full md:w-96 glass bg-gradient-to-br from-[#4ba5e0] via-[#8d94bc] to-[#b0c8e8] hover:bg-gradient-to-br hover:from-[#2bfd94] hover:via-[#70ffb9] hover:to-[#aeffd7] hover:border-blue-500"

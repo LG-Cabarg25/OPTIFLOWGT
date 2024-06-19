@@ -15,7 +15,7 @@ interface menu {
   template: `
     <div class="bg-gradient-to-r from-[#020831] to-[#0E216C]">
       <navbar-component/>
-      <hero-section class="p-6"/>
+      <hero-section class="p-1"/>
       <about-section/>
       <services-section/>
       <contact-section />
