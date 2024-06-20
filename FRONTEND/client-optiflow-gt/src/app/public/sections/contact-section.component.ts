@@ -1,7 +1,9 @@
+import { FooterComponentComponent } from '@shared/components/footer-component.component';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'contact-section',
+  imports: [FooterComponentComponent],
   standalone: true,
   template: `
           <footer id="contact" class="footer footer-center p-10  text-base-content rounded">
@@ -24,17 +26,11 @@ import { Component } from '@angular/core';
       </a>
     </div>
   </nav>
-  <aside class="flex items-center justify-center text-white text-center space-x-4">
-  <a href="#">
-    <img class="h-10" src="/img/logogt-whites.png" alt="GussLogo" loading="lazy" />
-  </a>
-  <p>© OPTIFLOWGT {{ year }}</p>
-
-</aside>
+  <footer-component/>
     </footer>
   `,
   styles: []
 })
 export class ContactSectionComponent {
-  year: number = new Date().getFullYear();
+
 }

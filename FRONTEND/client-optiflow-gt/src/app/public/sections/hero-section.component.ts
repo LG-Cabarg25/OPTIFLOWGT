@@ -30,7 +30,7 @@ interface HeroBut2{
             OPTIFLOW-GT
           </h1>
           <h2
-            class="mt-1 text-3xl text-left font-bold sm:text-4xl lg:text-6xl mb-6 text-gradient "
+            class="mt-1 text-2xl text-left font-bold sm:text-4xl lg:text-5xl mb-6 text-gradient "
           >
             Tu solución automatizada.
           </h2>
@@ -100,8 +100,8 @@ interface HeroBut2{
           >
             <img
               class="h-auto rounded-md shadow-md relative z-10"
-              width="450"
-              height="300"
+              width="425"
+              height="275"
               src="/img/profile.png"
               alt="optiflowgt"
               loading="lazy"
