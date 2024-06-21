@@ -18,7 +18,7 @@ interface ButtonNav{
     <div
       [class.fixed]="isFixed"
       [class.scrolled]="showWhiteBackground()"
-      class="navbar text-white"
+      class="navbar text-white p-4"
     >
       <div class="navbar-start">
         <div class="dropdown">

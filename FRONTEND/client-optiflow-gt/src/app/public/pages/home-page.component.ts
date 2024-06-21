@@ -1,4 +1,4 @@
-import { NavbarComponent } from './../../shared/components/navbar-component';
+import { NavbarComponent } from '../../shared/components/navbar-component.component';
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { AboutSectionComponent, ContactSectionComponent, HeroSectionComponent, ServicesSectionComponent } from '@public/sections';

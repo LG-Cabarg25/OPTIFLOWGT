@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <aside class="flex items-center justify-center text-white text-center space-x-4">
+    <aside class="flex items-center justify-center text-white text-center space-x-4 p-4">
   <a href="#">
     <img class="h-10" src="/img/logogt-whites.png" alt="GussLogo" loading="lazy" />
   </a>
