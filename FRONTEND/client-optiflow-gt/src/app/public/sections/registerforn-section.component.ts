@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { InputComponent } from '@shared/components';
 import { FormRegisterComponent } from '../components/form-register.component';
 
 @Component({
   selector: 'registerforn-section',
   standalone: true,
-  imports: [InputComponent, FormRegisterComponent,] ,
+  imports: [ FormRegisterComponent,] ,
   template: `
     <section id="about" class="p-20">
       <div
@@ -26,7 +25,7 @@ import { FormRegisterComponent } from '../components/form-register.component';
           </div>
         </div>
         <div class="flex justify-center lg:w-1/2">
-          <div class="w-full border-none md:w-96">
+          <div class="w-full border-none md:w-150">
             <img
               src="img/profile.png"
               alt="El Mero Guss"
