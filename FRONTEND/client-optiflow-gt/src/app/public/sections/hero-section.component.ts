@@ -74,7 +74,7 @@ interface HeroBut2{
               </svg>
             </button>}
             @for (item of heroItems2(); track item){
-            <button  class="btn btn-active btn-link text-white p-8 text-xl">
+            <button  class="btn   btn-active btn-link text-white p-8 text-xl">
             <a [href]="item.routeb">{{ item.label }}</a>
             </button>}
           </div>
@@ -87,34 +87,23 @@ interface HeroBut2{
                 />
               </div>
             </div>
-            <div class="chat-bubble bg-info">
+            <div class="chat-bubble bg-info skeleton">
               "Cree en ti mismo y alcanzarás tus objetivos."
             </div>
           </div>
         </div>
         <div
-          class="profile flex justify-center lg:justify-center mask mask-squircle  relative order-2 lg:order-2 bg-gradient-to-r from-[#0E216C] to-[#020831]"
-        >
-          <div
-            class="profile flex flex-col justify-start shadow-secondary items-center self-center p-4 md:p-10  "
+            class="profile flex lg:justify-center order-2 lg:order-2 items-center self-center p-4 md:p-10  "
           >
             <img
               class="h-auto rounded-md shadow-md relative z-10"
-              width="425"
+              width="600"
               height="275"
               src="/img/profile.png"
               alt="optiflowgt"
               loading="lazy"
             />
           </div>
-          <!-- <div class="absolute -top-12 left-1/2 transform -translate-x-1/2">
-            <img
-              class="w-20 h-20 rounded-full border-2 border-white shadow-md"
-              src="/img/icon5.png"
-              alt="Avatar 5"
-            />
-          </div> -->
-        </div>
       </div>
     </section>
   `,

@@ -10,11 +10,11 @@ type inputType = 'text' | 'password' | 'email'| 'number' | 'date' ;
   imports: [ReactiveFormsModule],
   template: `
       <div class=" mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-8 ">
-    <div class="sm:col-span-4">
+    <div class="col-span-full">
     <input
       [type]="type()"
       [formControl] = "control()"
-      class="form-input block w-48 rounded-md border-0 py-1.5 text-[#EEEA75]shadow-sm ring-1 ring-inset ring-gray-300 laceholder:text-[#EEEA75]focus:ring-2 focus:ring-inset focus:ring-[#EEEA75] sm:text-sm sm:leading-6"
+      class="form-input block  rounded-md border-0 w-full py-1.5 text-[#EEEA75] shadow-sm ring-1 ring-inset ring-gray-300 laceholder:text-[#EEEA75]focus:ring-2 focus:ring-inset focus:ring-[#EEEA75] sm:text-sm sm:leading-6"
       [placeholder]="placeholder()"
     />
     @if (isValidControl()) {<span class="form-text text-error/70">
@@ -39,6 +39,14 @@ type inputType = 'text' | 'password' | 'email'| 'number' | 'date' ;
     .form-input::placeholder {
       color: rgba(255, 255, 255, 0.6);
     }
+
+    input[type='date'] {
+        position: left;
+        color: #ffffff;
+      }
+      input[type='date']::-webkit-calendar-picker-indicator {
+        filter: invert(1); /* Invierte los colores del ícono del calendario */
+      }
   `
 })
 export class InputShortComponent {

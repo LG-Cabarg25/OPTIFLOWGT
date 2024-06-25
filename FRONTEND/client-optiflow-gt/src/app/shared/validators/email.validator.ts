@@ -10,7 +10,7 @@ export class EmailValidator implements AsyncValidator {
 
     const httpCallObservable = new Observable<ValidationErrors | null>((subscriber) => {
       console.log({ email });
-      if (email === 'hanss@gmail.com') {
+      if (email === 'lgcabarg25@gmail.com') {
         subscriber.next({
           emailTaken: true
         });

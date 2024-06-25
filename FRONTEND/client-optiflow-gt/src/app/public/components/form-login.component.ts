@@ -1,45 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { InputFullComponent } from '@shared/components';
+import { ValidatorsService } from '@shared/services';
 
 @Component({
-  selector: 'app-form-login',
+  selector: 'form-login',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule,InputFullComponent],
   template: `
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
-    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+    <h2 class="mt-4 text-center text-3xl font-bold leading-9 tracking-tight text-white">Iniciar sesión en su cuenta</h2>
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form class="space-y-6" action="#" method="POST">
+    <form [formGroup]="loginForm()"
+          (ngSubmit)="onSubmit()"
+          autocomplete="off">
       <div>
-        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-        <div class="mt-2">
-          <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-        </div>
-      </div>
-
-      <div>
-        <div class="flex items-center justify-between">
-          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-          <div class="text-sm">
-            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+        <div class="space-y-12">
+        <div class="col-span-full">
+        <input-full
+                    [type]="'text'"
+                    placeholder="Nombre de usuario"
+                    [control]="$any(loginForm().get('name'))"
+                  />
+</div>
+<div class="col-span-full">
+                  <input-full
+                    [type]="'password'"
+                    placeholder="Contraseña"
+                    [control]="$any(loginForm().get('password'))"
+                  ></input-full>
+                  <div class="text-sm items-end p-6">
+            <a href="#" class="font-semibold text-info hover:text-secondary ">Olvidaste tu contraseña?</a>
           </div>
-        </div>
-        <div class="mt-2">
-          <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
         </div>
       </div>
-
       <div>
-        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+        <button type="submit"
+        class="rounded-full  bg-gradient-to-r from-[#03B19D] to-[#8EC74C] w-full px-3 py-2 text-xl font-semibold text-white shadow-sm hover:from-[#8EC74C] hover:to-[#03B19D]">
+          Iniciar sesión</button>
       </div>
     </form>
 
-    <p class="mt-10 text-center text-sm text-gray-500">
-      Not a member?
-      <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
+    <p class="mt-10 text-center text-sm text-white">
+      No tienes una cuenta?
+      <a href="/register" class="font-semibold leading-6 text-info hover:text-secondary">Crear una cuenta</a>
     </p>
   </div>
 </div>
@@ -47,5 +55,25 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class FormLoginComponent {
+  #fb = inject(FormBuilder);
+  #validatorsService = inject(ValidatorsService);
 
+  public loginForm = signal<FormGroup>(
+    this.#fb.group(
+      {
+        name: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(this.#validatorsService.NamePattern()),
+          ],
+
+        ],
+        password: ['', [Validators.required, ]],
+
+      }))
+
+        onSubmit(): void {
+          this.loginForm().markAllAsTouched();
+        }
 }

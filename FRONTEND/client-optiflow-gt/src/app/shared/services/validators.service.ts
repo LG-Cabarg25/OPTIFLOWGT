@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { FormControl, FormGroup, ValidationErrors } from '@angular/forms';
+import { FormControl,  ValidationErrors } from '@angular/forms';
 
 @Injectable({ providedIn: 'root' })
 export class ValidatorsService {
@@ -26,10 +26,6 @@ export class ValidatorsService {
     return null;
   };
 
-  // public isValidField(form: FormGroup, field: string) {
-  //   return form.controls[field].errors && form.controls[field].touched;
-  // }
-
   public isValidField(control: FormControl) {
     return control.errors && control.touched;
   }
@@ -51,12 +47,12 @@ export class ValidatorsService {
           return `El campo debe ser mayor o igual que ${errors[key].min}`;
         case 'pattern':
           if (errors[key].requiredPattern === '^[a-zA-Z]+( [a-zA-Z]+)*$')
-            return 'Este campo solo acepta letras';
+            return 'Este campo no acepta datos numéricos';
           if (
             errors[key].requiredPattern ===
             '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'
           )
-            return 'Este campo debe ser un email valido';
+            return 'Este campo debe ser un email válido';
           return 'Error';
         case 'noStrider':
           return 'El campo no puede ser Strider';

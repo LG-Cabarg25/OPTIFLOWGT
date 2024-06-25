@@ -24,7 +24,7 @@ import { FormRegisterComponent } from '../components/form-register.component';
             </div>
           </div>
         </div>
-        <div class="flex justify-center lg:w-1/2">
+        <div class="flex profile justify-center lg:w-1/2">
           <div class="w-full border-none md:w-150">
             <img
               src="img/profile.png"
@@ -43,6 +43,10 @@ import { FormRegisterComponent } from '../components/form-register.component';
   -webkit-text-fill-color: transparent;
   color: #03B19D;
 }
+.profile {
+      filter: drop-shadow(
+        0 0 10px #8EC74C
+      )}
   `,
 })
 export class RegisterfornSectionComponent {}

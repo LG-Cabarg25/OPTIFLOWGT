@@ -40,7 +40,7 @@ import { Component } from '@angular/core';
             class="card w-full md:w-96 glass bg-gradient-to-br from-[#4ba5e0] via-[#8d94bc] to-[#b0c8e8] hover:bg-gradient-to-br hover:from-[#2bfd94] hover:via-[#70ffb9] hover:to-[#aeffd7] hover:border-blue-500"
           >
             <img
-              src="img/perfilg.jpg"
+              src="/img/perfilg.jpg"
               alt="El Mero Guss"
               class="w-full h-full object-cover rounded-xl"
             />

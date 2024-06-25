@@ -23,7 +23,6 @@
       "@private/*":["./src/app/private/*"],
       "@public/*":["./src/app/public/*"],
       "@shared/*":["./src/app/shared/*"],
-      "@material/*":["./src/app/material/material.ts"]
     },
     "useDefineForClassFields": false,
     "lib": [

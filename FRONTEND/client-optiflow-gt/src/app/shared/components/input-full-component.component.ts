@@ -16,10 +16,10 @@ type inputType = 'text' | 'password' | 'email'|'number'|'date';
     <input
       [type]="type()"
       [formControl] = "control()"
-      class="form-input block w-96 rounded-md border-0 py-1.5 text-[#EEEA75]shadow-sm ring-1 ring-inset ring-gray-300 laceholder:text-[#EEEA75]focus:ring-2 focus:ring-inset focus:ring-[#EEEA75] sm:text-sm sm:leading-6"
+      class="form-input block rounded-md border-0 py-1.5 w-full text-[#EEEA75]shadow-sm ring-1 ring-inset ring-gray-300 laceholder:text-[#EEEA75]focus:ring-2 focus:ring-inset focus:ring-[#EEEA75] sm:text-sm sm:leading-6"
       [placeholder]="placeholder()"
     />
-    @if (isValidControl()) {<span class="form-text text-balance text-error/80">
+    @if (isValidControl()) {<span class="form-text text-balance text-error">
       {{getError()}}
     </span>}
     </div>

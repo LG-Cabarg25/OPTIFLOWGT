@@ -16,11 +16,10 @@ import { InputShortComponent } from '@shared/components/input-short-component.co
   standalone: true,
   imports: [InputFullComponent, ReactiveFormsModule, InputShortComponent],
   template: `
-    <hr class="border-secondary" />
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2
-          class="mt-4 text-center text-4xl font-bold leading-9 tracking-tight text-white"
+          class="mt-2 text-center text-4xl font-bold leading-9 tracking-tight text-white"
         >
           Crear una cuenta
         </h2>
@@ -32,39 +31,39 @@ import { InputShortComponent } from '@shared/components/input-short-component.co
           autocomplete="off"
         >
           <div class="space-y-12">
-            <div class="border-b border-secondary/90 pb-12 p-2 space-x-4">
+            <div class=" space-x-4">
               <div
                 class=" mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-8 "
               >
                 <div class="col-span-full">
                   <input-full
                     [type]="'text'"
-                    placeholder="Nombre"
+                    placeholder="Nombre *"
                     [control]="$any(registerForm().get('name'))"
                   />
                 </div>
                 <div class="col-span-full">
                   <input-full
                     [type]="'text'"
-                    placeholder="Apellidos"
+                    placeholder="Apellidos *"
                     [control]="$any(registerForm().get('lastname'))"
                   />
                 </div>
                 <div class="col-span-full">
                   <input-full
                     [type]="'email'"
-                    placeholder="Correo Electrónico"
+                    placeholder="Correo Electrónico *"
                     [control]="$any(registerForm().get('email'))"
                   />
                 </div>
-                <div class="sm:col-span-4 w-full">
+                <div class="sm:col-span-4">
                   <input-short
                     [type]="'number'"
-                    placeholder="Teléfono"
+                    placeholder="Teléfono *"
                     [control]="$any(registerForm().get('phonenumber'))"
                   />
                 </div>
-                <div class="sm:col-span-4 w-full">
+                <div class="sm:col-span-4 icon-white">
                   <input-short
                     [type]="'date'"
                     placeholder="Fecha de Nac."
@@ -73,82 +72,91 @@ import { InputShortComponent } from '@shared/components/input-short-component.co
                 </div>
                 <div class="sm:col-span-4">
                   <select
-                    placeholder="Género"
-                    id="country"
-                    name="country"
-                    autocomplete="country-name"
                     class="form-input block w-full rounded-md border-0 py-1.5 text-[#EEEA75] shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-[#EEEA75] sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option>Género</option>
-                    <option>Masculino</option>
-                    <option>Femenino</option>
+                    <option class="bg-primary/90 text-secondary/90">
+                      Género *
+                    </option>
+                    <option class="bg-primary/90 text-secondary/90">
+                      Masculino
+                    </option>
+                    <option class="bg-primary/90 text-secondary/90">
+                      Femenino
+                    </option>
                     <span class="form-text text-danger"></span>
                   </select>
                 </div>
                 <div class="sm:col-span-4">
                   <select
-                    placeholder="Estado civil"
-                    id="country"
-                    name="country"
-                    autocomplete="country-name"
                     class="form-input block w-full rounded-md border-0 py-1.5 text-[#EEEA75]shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-[#EEEA75] sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option>Estado civil</option>
-                    <option>Soltero</option>
-                    <option>Casado</option>
-                    <option>Otro...</option>
+                    <option class="bg-primary/90 text-secondary/90">
+                      Estado civil *
+                    </option>
+                    <option class="bg-primary/90 text-secondary/90">
+                      Soltero
+                    </option>
+                    <option class="bg-primary/90 text-secondary/90">
+                      Casado
+                    </option>
+                    <option class="bg-primary/90 text-secondary/90">
+                      Otro...
+                    </option>
                     <span class="form-text text-danger"></span>
                   </select>
                 </div>
                 <div class="col-span-full">
                   <input-full
                     [type]="'text'"
-                    placeholder="Dirección"
+                    placeholder="Dirección *"
                     [control]="$any(registerForm().get('address'))"
                   ></input-full>
                 </div>
                 <div class="col-span-full">
                   <input-full
                     [type]="'password'"
-                    placeholder="Contraseña"
+                    placeholder="Contraseña *"
                     [control]="$any(registerForm().get('password'))"
                   ></input-full>
                 </div>
                 <div class="col-span-full">
                   <input-full
                     [type]="'password'"
-                    placeholder="Confirmar Contraseña"
+                    placeholder="Confirmar Contraseña *"
                     [control]="$any(registerForm().get('confirmPassword'))"
                   ></input-full>
                 </div>
 
-                <div class="col-span-full flex space-x-4">
-                  <input
-                    id="comments"
-                    name="comments"
-                    type="checkbox"
-                    class="h-4 w-4 flex rounded border-gray-300 checkbox checkbox-accent "
-                  />
-                  <label
-                    for="email"
-                    class="flex last:text-sm font-medium leading-6 text-accent/90 "
-                    >Acepto los términos de servicio y Política de
-                    privacidad.</label
-                  >
+                <div class="col-span-full flex flex-col space-y-2">
+                  <div class="flex items-center space-x-4">
+                    <input
+                      id="flexCheckDefault"
+                      formControlName="termsAndConditions"
+                      type="checkbox"
+                      class="h-4 w-4 flex rounded border-gray-300 checkbox checkbox-accent"
+                    />
+                    <label
+                      class="text-sm font-medium leading-6 text-accent/90"
+                      for="flexCheckDefault"
+                    >
+                      Acepto los términos de servicio y Política de privacidad.
+                    </label>
+                  </div>
+                  <div>
+                    @if (isValidField('termsAndConditions')) {
+                    <span class="form-text text-error">
+                      {{ getFieldError('termsAndConditions') }}
+                    </span>
+                    }
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="mt-6 flex items-center justify-end gap-x-6">
             <button
-              type="button"
-              class="text-sm font-semibold leading-6 text-white"
-            >
-              Cancel
-            </button>
-            <button
               type="submit"
-              class="rounded-md bg-info px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-accent"
+              class="rounded-full bg-gradient-to-r from-[#03B19D] to-[#8EC74C] w-full px-3 py-2 text-xl font-semibold text-white shadow-sm hover:from-[#8EC74C] hover:to-[#03B19D]"
             >
               Crear Cuenta
             </button>
@@ -190,38 +198,66 @@ export class FormRegisterComponent {
   #emailValidator = inject(EmailValidator);
 
   public registerForm = signal<FormGroup>(
-    this.#fb.group({
-      name: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(this.#validatorsService.NamePattern()),
+    this.#fb.group(
+      {
+        name: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(this.#validatorsService.NamePattern()),
+          ],
         ],
-      ],
-      lastname: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(this.#validatorsService.LastnamePattern()),
+        lastname: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(this.#validatorsService.LastnamePattern()),
+          ],
         ],
-      ],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(this.#validatorsService.emailPatter()),
+        email: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(this.#validatorsService.emailPatter()),
+          ],
+          [this.#emailValidator],
         ],
-        [this.#emailValidator],
-      ],
-      phonenumber: ['',[Validators.required]],
-      date: ['',[Validators.required]],
-      gender: ['',[Validators.required]],
-      civilstatus: ['',[Validators.required]],
-      address: ['',[Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]],
-    })
+        phonenumber: ['', [Validators.required]],
+        date: ['', [Validators.required]],
+        gender: ['', [Validators.required]],
+        civilstatus: ['', [Validators.required]],
+        address: ['', [Validators.required]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', [Validators.required]],
+        termsAndConditions: [false, [Validators.requiredTrue]],
+      },
+      {
+        validators: [
+          this.#isEqualFieldValidator.validate('password', 'confirmPassword'),
+        ],
+      }
+    )
   );
+  isValidField(field: string): boolean | null {
+    return (
+      this.registerForm().controls[field].errors &&
+      this.registerForm().controls[field].touched
+    );
+  }
+  getFieldError(field: string): string | null {
+    if (!this.registerForm().controls[field]) return null;
+
+    const errors = this.registerForm().controls[field].errors || {};
+    console.log(errors);
+    for (const key of Object.keys(errors)) {
+      switch (key) {
+        case 'required':
+          return 'Debe aceptar las condiciones de uso';
+      }
+    }
+
+    return null;
+  }
   onSubmit(): void {
     this.registerForm().markAllAsTouched();
   }
