@@ -14,5 +14,10 @@ export const routes: Routes = [
   {
     path:'**',
     redirectTo: '404',
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('@private/private.routes').then((c) => c.PrivateRoutes),
   }
 ];
