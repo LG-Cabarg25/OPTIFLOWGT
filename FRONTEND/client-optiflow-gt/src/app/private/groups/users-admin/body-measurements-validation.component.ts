@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-form-complete-profile',
+  selector: 'app-body-measurements-validation',
   standalone: true,
   imports: [],
   template: `
     <p>
-      form-complete-profile works!
+      body-measurements-validation works!
     </p>
   `,
   styles: ``
 })
-export class FormCompleteProfileComponent {
+export class BodyMeasurementsValidationComponent {
 
 }

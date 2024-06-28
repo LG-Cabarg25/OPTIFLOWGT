@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-first-init',
+  selector: 'app-confirm-account-user',
   standalone: true,
   imports: [],
   template: `
     <p>
-      first-init works!
+      confirm-account-user works!
     </p>
   `,
   styles: ``
 })
-export class FirstInitComponent {
+export class ConfirmAccountUserComponent {
 
 }
