@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-confirm-account-user',
+  selector: 'app-news',
   standalone: true,
   imports: [],
   template: `
     <p>
-      confirm-account-user works!
+      news works!
     </p>
   `,
   styles: ``
 })
-export class ConfirmAccountUserComponent {
+export class NewsComponent {
 
 }

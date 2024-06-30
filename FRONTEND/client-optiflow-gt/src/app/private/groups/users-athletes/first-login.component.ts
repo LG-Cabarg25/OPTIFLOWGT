@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-body-measurements',
+  selector: 'app-first-login',
   standalone: true,
   imports: [],
   template: `
     <p>
-      body-measurements works!
+      first-login works!
     </p>
   `,
   styles: ``
 })
-export class BodyMeasurementsComponent {
+export class FirstLoginComponent {
 
 }

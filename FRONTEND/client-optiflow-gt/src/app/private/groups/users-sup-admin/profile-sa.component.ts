@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-assistance',
+  selector: 'app-profile-sa',
   standalone: true,
   imports: [],
   template: `
     <p>
-      assistance works!
+      profile-sa works!
     </p>
   `,
   styles: ``
 })
-export class AssistanceComponent {
+export class ProfileSAComponent {
 
 }

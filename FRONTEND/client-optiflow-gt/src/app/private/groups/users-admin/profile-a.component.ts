@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-welcome-first',
+  selector: 'app-profile-a',
   standalone: true,
   imports: [],
   template: `
     <p>
-      welcome-first works!
+      profile-a works!
     </p>
   `,
   styles: ``
 })
-export class WelcomeFirstComponent {
+export class ProfileAComponent {
 
 }

@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-admin-management',
   standalone: true,
   imports: [],
   template: `
     <p>
-      dashboard works!
+      admin-management works!
     </p>
   `,
   styles: ``
 })
-export class DashboardComponent {
+export class AdminManagementComponent {
 
 }

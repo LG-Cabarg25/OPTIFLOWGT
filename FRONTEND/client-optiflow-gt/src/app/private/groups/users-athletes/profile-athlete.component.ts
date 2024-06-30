@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-my-profile',
+  selector: 'app-profile-athlete',
   standalone: true,
   imports: [],
   template: `
     <p>
-      my-profile works!
+      profile-athlete works!
     </p>
   `,
   styles: ``
 })
-export class MyProfileComponent {
+export class ProfileAthleteComponent {
 
 }

@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-notices',
+  selector: 'app-athletes-management',
   standalone: true,
   imports: [],
   template: `
     <p>
-      notices works!
+      athletes-management works!
     </p>
   `,
   styles: ``
 })
-export class NoticesComponent {
+export class AthletesManagementComponent {
 
 }

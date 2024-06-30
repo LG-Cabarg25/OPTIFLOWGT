@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-aditional-info',
+  selector: 'app-news-management',
   standalone: true,
   imports: [],
   template: `
     <p>
-      aditional-info works!
+      news-management works!
     </p>
   `,
   styles: ``
 })
-export class AditionalInfoComponent {
+export class NewsManagementComponent {
 
 }
